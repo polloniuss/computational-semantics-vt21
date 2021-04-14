@@ -1,9 +1,14 @@
 1. Propositional logic
 
 
-statement 4:"If Alex or George plays the piano, they are musical."
- It is ambiguous.Does "they" refer to the one who plays the piano or to both of them here? 
-This bit is confusing. we decided to go with both of them but this can be translated both ways.
+" statement 4 : "If Alex or George plays the piano, they are musical" is ambiguous. Does "they" refer to the one who plays the piano :
+
+If Alex plays the piano, Alex is musical, or if George plays the piano, George is musical : (AP -> AM) | (GP -> GM)
+Or "they" refer to both of them :
+
+If Alex plays the piano or if George plays the piano, they're both musical: (AP|GP)=>(AM&GM)
+
+This bit is confusing. we decided to go with both of them but this can be translated both ways.`
 
 
 2. Valuation of Propositional logic
@@ -12,30 +17,44 @@ This bit is confusing. we decided to go with both of them but this can be transl
 Comments: All sentences from Question 1 are True except 'If Alex or George plays the piano, 
 they are musical.' which makes sense, because George plays the piano and George is not musical.
 
+In the first statement: F -> T ,which is True
+In the second one is True,because P and Q both are true
+In the third one: Alex is not smart is False,lydia is not happy is False,P and Q both are False,So the result is False.
+In the fourth sentence,"If Alex or George plays the piano, they are musical." is False So,It means that if Alex plays the piano or George plays the piano, both of them must be musical.and here because George plays the piano but he is not musical , it is False.
+The last one is False
 
 3. Predicate logic without quantifiers
 
 
- Statement 2: "Lydia likes herself and so does George" is ambiguous.
-we weren't sure in the second sentence if the meaning was that George liked himself or Lydia.
- 
-statement 3: "Charlie is an English pianist" we weren't sure if it was better to represent 
-it with a single predicate or to split it in two predicates. 
-So we decided to split in two. (pianist() and english())
+Statement 2: "Lydia likes herself and so does George" is ambiguous. we weren't sure in the second sentence if the meaning was that George liked himself or Lydia.
 
+Lydia likes herslf and George likes her too. (like(Lydia, Lydia) & like(George, Lydia))
+Lydia likes herself and George likes himself too. (like(Lydia, Lydia) & like(George, George))
+statement 3: "Charlie is an English pianist" we weren't sure if it was better to represent it with a single predicate or to split it in two predicates. So we decided to split in two. (pianist() and english())
 
 4. First order logic with quantifiers
 
 statement 2:
 It could be written as: 'all x. exists y. (admires(George,x) & - admires(Lydia,y))' and still give the same result
 Use "-x" to express no one (when "x" means everybody)
-
+'all x.(admire(George, x)) & -exists y.(admire(Lydia, y))'
+statement 3:
+At first we think no one could also mean the same az nobody,wich we wrote it like: -∃x.∀y.(admire(x,y))
+Using the rules for interchanging negation and quantifiers, ¬∀≡∃¬ and ¬∃≡∀¬ => then we have -> all x.exists y.-admire(x, y)
 statement 4:
 We don't know how to represent "exactly one.
-how to properly create a link for "playing everything that alex wrote" between playing and what he actually wrote
-
+how to properly create a link for "playing everything that alex wrote" between playing and what he actually wrote 
 
 5. Valuation of first order logic
+
+The first one is False because Lydia does not like Alex is False.
+The second one is True because because both of them are True
+The third one is True because all of them are true.
+Statement 4 is False because Lydia admire George is False.
+Statement 5 is True because Charlie is a woman who knows herself and likes George.
+Statement 6 is False because George doesnt love everybody.
+Statement 7 is True, because no one admires everybody.
+Statement 8 is True, because Charlie is the only musician who plays what Alex wrote such as: " sonata, waltz and etude"
 
 6. Function application and  β -reduction
 
